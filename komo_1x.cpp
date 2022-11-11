@@ -20,35 +20,45 @@
 //     }
 // };
 
-struct KOMO
+struct t1
 {
     template <typename T>
     bool operator()(const T* parameters, T* residual) const 
     {
-        const T x = parameters[0];
-        residual[0] = (7.0-x);
+        const T x_0 = parameters[0];
+        residual[0] = (-2.0-x_0);
         return true;
     }
 };
 
+struct t2
+{
+    template <typename T>
+    bool operator()(const T* parameters, T* residual) const 
+    {
+        const T x_0 = parameters[0];
+        residual[0] = (-2.0-x_0);
+        return true;
+    }
+};
 
 
 int main(int argc, char* argv[])
 {
     google::InitGoogleLogging(argv[0]);
 
-    double initial_x = 1.0;
+    double initial_x = -1.2116;
+    double goal_x = -0.507423;
 
-    std::vector<double> x{-1.2116, -1.2116, -1.2116, -0.507423};
+    std::vector<double> x{initial_x, -1.2116, -1.2116, goal_x};
 
     ceres::Problem problem;
-    problem.AddParameterBlock(x.data(), 3);
-    auto id = problem.AddResidualBlock(new ceres::AutoDiffCostFunction<KOMO, 1, 1>(new KOMO), nullptr, x.data());
-    problem.SetParameterLowerBound(x.data(), 0, -1.2116);
-    problem.SetParameterUpperBound(x.data(), 0, -1.2116);
-    problem.SetParameterLowerBound(x.data(), 3, -0.507423);
-    problem.SetParameterUpperBound(x.data(), 3, -0.507423);
-
+    // problem.AddParameterBlock(x.data(), x.size());
+    auto id = problem.AddResidualBlock(new ceres::AutoDiffCostFunction<t1, 1, 4>(new t1), nullptr, x.data());
+    // problem.SetParameterLowerBound(x.data(), 0, -1.2116);
+    // problem.SetParameterUpperBound(x.data(), 0, -1.2116);
+    // problem.SetParameterLowerBound(x.data(), 3, -0.507423);
+    // problem.SetParameterUpperBound(x.data(), 3, -0.507423);
 
 
     // double cost = 0.0;

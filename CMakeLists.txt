@@ -10,3 +10,6 @@ target_link_libraries(helloworld Ceres::ceres)
 
 add_executable(komo_1x komo_1x.cpp)
 target_link_libraries(komo_1x Ceres::ceres)
+
+add_executable(tutorial tutorial.cpp)
+target_link_libraries(tutorial Ceres::ceres)
