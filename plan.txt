@@ -1,0 +1,19 @@
+Co viem
+---
+1. vlozit ParameterBlock do funkcie
+2. vlozit viacero ParameterBlockov do funkcie
+3. Ohodnotit block
+
+
+Co musim zistit
+---
+1. Ci kebyze nerobim autodiff ale poskytnem derivacie, tak ze ci by to nebolo rychlejsie?
+2. Mozno zaintegrovat do ROSu? -hoc asi zbytocne dokym nebudem mat daku constraint realne aj
+3. otestovat druhy level s tym
+
+
+
+
+
+1. derivacie
+2. constraints
