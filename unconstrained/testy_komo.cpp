@@ -3,8 +3,6 @@
 
 #include <vector>
 
-#include "komo.h"
-
 
 class Feature_CostFunction : public ceres::CostFunction
 {

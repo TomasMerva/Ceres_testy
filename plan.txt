@@ -7,7 +7,7 @@ Co viem
 
 Co musim zistit
 ---
-1. Ci kebyze nerobim autodiff ale poskytnem derivacie, tak ze ci by to nebolo rychlejsie?
+1. Ci kebyze nerobim autodiff ale poskytnem derivacie, tak ze ci by to nebolo rychlejsie? Je to rychlejsie
 2. Mozno zaintegrovat do ROSu? -hoc asi zbytocne dokym nebudem mat daku constraint realne aj
 3. otestovat druhy level s tym
 
@@ -15,5 +15,6 @@ Co musim zistit
 
 
 
-1. derivacie
-2. constraints
+1. derivacie - hotovo
+2. constraints - idem skusat teraz
+3. gnuplot
